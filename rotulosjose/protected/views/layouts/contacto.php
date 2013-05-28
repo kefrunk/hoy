@@ -4,45 +4,104 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+
+<style>
+
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	background: #7c6a5b;
+}
+
+#mainmenu{
+position:absolute;
+ top:0px;
+ right:0px;
+ left:0px;
+ height:100px;
+ background-color: #100f99;
+ background-image: url('/imgJose/antigrad.png');
+}
+
+#cuerpoPanel{
+position:absolute;
+ top:100px;
+  overflow:scroll;
+ left:120px;
+ right:100px;
+ bottom: 88px;
+background: url('/imgJose/slogotr.png') right no-repeat #555555;
+padding-left:40px;
+color:#FFFFFF;
+}
+
+#leftPanel{
+ position:absolute;
+ top:100px;
+ left:0;
+ width:30px;
+ bottom:88px;
+background-color:#7c6a5b;
+}
+
+
+
+#footer{
+ position:absolute;
+ bottom:0;
+ right:0;
+ left:0;
+ height:88px;
+ background-color: #100f99;
+ background-image: url('/imgJose/grad.png');
+}
+
+
+#dondestamos{
+padding-left:15px;
+ position:absolute;
+ left:0;
+ top:0px;
+ height:80px;
+ width:400px;
+ color:#cccccc;
+font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+font-size:17px;
+text-align:left;
+ background: #444499;
+  border-style: solid;
+ border-width: 2px;
+ -moz-border-radius: 15px;
+ border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+
+
+</style>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
 <body class="index">
 
-<div class="container" id="page">
+<div id="mainmenu">
 
-	<div id="header">
-
-			<div id="mainmenu">
-		
-		
-		
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Inicio', 'url'=>array('/site/index')),
-				array('label'=>'Galeria', 'url'=>array('/fotos/index')),
-				array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contacto', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-		
-		
-		
-		
-	</div>
+			<?php $this->widget('zii.widgets.CMenu',array(
+				'items'=>array(
+					array('label'=>'Inicio', 'url'=>array('/site/index')),
+					array('label'=>'Galeria', 'url'=>array('/fotos/index')),
+					array('label'=>'Empresa', 'url'=>array('/site/about')),
+					array('label'=>'Contacto', 'url'=>array('/site/contact')),
+					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				),
+			)); ?>
+			
 		
 	</div><!-- header -->
 
@@ -52,22 +111,26 @@
 	
 	<!-- mainmenu -->
 	
-	<div class="maincontent_contacto">
+	<div id="cuerpoPanel">
 		<?php echo $content; ?>
 	</div>
 
-	<div class="clear"></div>
-
-	<div id="footer">
-	<div id="dondestamos">
-	<p>Rotulos Jose<br>
-	Poligono Puente Alto, s/n<br>
-	03433 Orihuela(Alicante)<br>
-	Telefono:9234523<br>
-	e-mail:info@rotulosjose.com</p>
-	</div>
+<div id="cabeceraPanel"></div>
 		
-	</div><!-- footer -->
+			
+			
+			
+			
+			
+			
+			
+			<div id="footer">
+					<div id="dondestamos">
+				Poligono Industrial Puente Alto, 2<br>
+				03300 Orihuela(Alicante)<br>
+				Telefono:9234523          e-mail:info@rotulosjose.com</p>
+				</div>	
+			</div>
 
 </div><!-- page -->
 

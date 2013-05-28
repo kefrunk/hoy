@@ -33,6 +33,21 @@ class SiteController extends Controller
 		$this->render('index', array('model'=>$model));
 	}
 
+	public function actionAbout()
+	{
+		$this->layout='empresa';
+		$this->render('about');
+	}
+	
+	public function actionGaleria()
+	{
+		$model=new Imagen;
+		$this->layout='galeria';
+		$this->render('galeria', array('model'=>$model));
+	}
+	
+
+	
 	/**
 	 * This is the action to handle external exceptions.
 	 */

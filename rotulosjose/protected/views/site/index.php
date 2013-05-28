@@ -7,19 +7,21 @@ $this->pageTitle=Yii::app()->name;
 
 <style>
 .galleria-container{background:none}
+}
 </style>
-<div style="float:right;">
+<div>
 <?php
 $this->widget('Galleria', array(
     'dataProvider' => $model->search(),
 	'options' => array(//galleria options
         'transition' => 'fade',
-		'width' => 800,
-		'height' => 500,
-		'thumbnails'=>'false',
-		'autoplay'=>3000,
-		'lightbox'=>'true',
-		'showInfo'=>'false',),
+		'autoplay'=>5000,
+		'lightbox'=>true,
+		'transitionSpeed' => 2000,
+		 'imagePan'=>true,
+		 'showInfo' =>false,
+		 'showImagenav'=>false,
+		 'imageCrop'=>true,),
 	'srcPrefix' => 'upload/images/',
     'binding' => array(
 	'imagePrefix' => '',

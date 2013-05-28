@@ -33,7 +33,7 @@ position:absolute;
  left:270px;
  right:0;
  bottom: 88px;
-background: url('/imgJose/slogo.png') left no-repeat #7c6a5b;;
+background: url('/imgJose/slogo.png') right no-repeat #7c6a5b;
 }
 #leftPanel{
  position:absolute;
@@ -44,30 +44,8 @@ background: url('/imgJose/slogo.png') left no-repeat #7c6a5b;;
 background-color:#7c6a5b;
 }
 
-#leftPanelWidget1{
- position:absolute;
- left:0;
- top:0px;
- bottom:50%;
- width:228px;
- margin:25px;
- background: rgba(120,0,45,0.7);
- -moz-border-radius: 15px;
- border-radius: 15px;
-  background-image: url('/imgJose/borderdiscover.png');
-}
 
-#leftPanelWidget2{
- position:absolute;
- left:0;
- top:50%;
- bottom:0;
- width:228px;
- margin:25px;
- background: rgba(120,0,45,0.7);
- -moz-border-radius: 15px;
- border-radius: 15px;
-}
+
 
 
 #footer{
@@ -81,13 +59,25 @@ background-color:#7c6a5b;
 }
 
 
+
 #dondestamos{
-margin-left:50px;
-text-align:left;
-color:#cccccc;
-font-size:10px;
+	 padding-left:15px;
+ position:absolute;
+ left:0;
+ top:50%;
+ bottom:0;
+ width:228px;
+ margin:25px;
+ color:#cccccc;
 font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+font-size:17px;
+text-align:left;
+ background: #444499;
+ -moz-border-radius: 15px;
+ border-radius: 15px;
 }
+
+
 
 
 </style>
@@ -102,8 +92,8 @@ font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Inicio', 'url'=>array('/site/index')),
-					array('label'=>'Galeria', 'url'=>array('/fotos/index')),
-					array('label'=>'Empresa', 'url'=>array('/site/page', 'view'=>'about')),
+					array('label'=>'Galeria', 'url'=>array('/site/galeria')),
+					array('label'=>'Empresa', 'url'=>array('/site/about')),
 					array('label'=>'Contacto', 'url'=>array('/site/contact')),
 					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
@@ -149,15 +139,12 @@ font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
 				
 				
 				
-				<div id="leftPanelWidget2">
 				<div id="dondestamos">
 				<p>Rotulos Jose<br>
 				Poligono Puente Alto, s/n<br>
 				03433 Orihuela(Alicante)<br>
 				Telefono:9234523<br>
 				e-mail:info@rotulosjose.com</p>
-				</div>	
-				
 				</div>
 				
 				

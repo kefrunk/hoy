@@ -31,34 +31,27 @@ body
 	padding: 20px 20px 20px 0;
 }
 
-#footer
-{
-	padding: 0px;
-	position:absolute;
-	bottom:0px;
-	top:85%;
-	font-size: 0.8em;
-	text-align: left;
-	width: 100% !important;
-  	background-image: url('/imgJose/grad.png');
-  	background-repeat:repeat-x;
-	color: #ffffff;
+
+
+
+
+#leftPanelWidget1{
+ position:absolute;
+ left:0;
+ top:0px;
+ bottom:50%;
+ width:228px;
+ margin:25px;
+ background: rgba(120,0,45,0.7);
+  border-style: solid;
+ border-width: 2px;
+ -moz-border-radius: 15px;
+ border-radius: 15px;
+  -webkit-border-radius: 15px;
+ background-image: url('/imgJose/borderdiscover.png');
 }
 
-#nav_guia{
--moz-border-radius: 15px;
-border-radius: 15px;
-margin-left:auto;
-margin-right:auto;
-width: 10%;
-}
-#sidebar{float:left;width:45px;}
 
-#dondestamos{
-margin-left:50px;
-color:#cccccc;
-font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
-}
 
 
 
