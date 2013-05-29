@@ -6,6 +6,7 @@ $this->breadcrumbs=array(
 	'Imagens',
 );
 
+
 $this->menu=array(
 	array('label'=>'Subir Imagen', 'url'=>array('create')),
 	array('label'=>'Administrar Imagenes', 'url'=>array('admin')),

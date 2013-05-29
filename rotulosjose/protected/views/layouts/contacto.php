@@ -1,9 +1,9 @@
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta name="language" content="es" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 
 <style>
@@ -64,13 +64,12 @@ background-color:#7c6a5b;
 #dondestamos{
 padding-left:15px;
  position:absolute;
- left:0;
- top:0px;
- height:80px;
+ right:0;
+ bottom:0px;
  width:400px;
  color:#cccccc;
 font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
-font-size:17px;
+font-size:14px;
 text-align:left;
  background: #444499;
   border-style: solid;
@@ -90,13 +89,16 @@ text-align:left;
 <body class="index">
 
 <div id="mainmenu">
-
+			<div id="Titulos">
+		<img src="/imgJose/logo1.png"style="float:left;margin-left:50px;"/>
+		</div>
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Inicio', 'url'=>array('/site/index')),
-					array('label'=>'Galeria', 'url'=>array('/fotos/index')),
-					array('label'=>'Empresa', 'url'=>array('/site/about')),
-					array('label'=>'Contacto', 'url'=>array('/site/contact')),
+					array('label'=>'Galeria', 'url'=>array('/site/galeria'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Empresa', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Imagenes', 'url'=>array('/imagen/admin'), 'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Contacto', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				),
@@ -125,11 +127,7 @@ text-align:left;
 			
 			
 			<div id="footer">
-					<div id="dondestamos">
-				Poligono Industrial Puente Alto, 2<br>
-				03300 Orihuela(Alicante)<br>
-				Telefono:9234523          e-mail:info@rotulosjose.com</p>
-				</div>	
+				<img src="/imgJose/dooo.png">	
 			</div>
 
 </div><!-- page -->

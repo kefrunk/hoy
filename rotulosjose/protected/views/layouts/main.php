@@ -1,9 +1,9 @@
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+	<meta name="language" content="es" />
 	
 
 <style>
@@ -65,12 +65,12 @@ background-color:#7c6a5b;
  position:absolute;
  left:0;
  top:50%;
- bottom:0;
  width:228px;
  margin:25px;
  color:#cccccc;
 font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
-font-size:17px;
+font-size:13px;
+font-weight:bold;
 text-align:left;
  background: #444499;
  -moz-border-radius: 15px;
@@ -88,13 +88,16 @@ text-align:left;
 <body class="index">
 
 <div id="mainmenu">
-
+		<div id="Titulos">
+		<img src="/imgJose/logo1.png"style="float:left;margin-left:50px;"/>
+		</div>
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Inicio', 'url'=>array('/site/index')),
-					array('label'=>'Galeria', 'url'=>array('/site/galeria')),
-					array('label'=>'Empresa', 'url'=>array('/site/about')),
-					array('label'=>'Contacto', 'url'=>array('/site/contact')),
+					array('label'=>'Galeria', 'url'=>array('/site/galeria'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Empresa', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Imagenes', 'url'=>array('/imagen/admin'), 'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Contacto', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				),
@@ -116,35 +119,13 @@ text-align:left;
 <div id="cabeceraPanel"></div>
 			
 <div id="leftPanel">
-				<div id="leftPanelWidget1">
-				<ul id="treemenu2" class="treeview">
 				
-				<li>+ Hoteles y Restaurantes
-				</li>
-				<li>+ Turismo Rural
-				</li>
-				<li>+ Conexion AVE
-				</li>
-				<li>+ Guia Gastronomica
-				</li>
-				</ul>
-
-				<script type="text/javascript">
-				ddtreemenu.createTree("treemenu2", true)
-				</script>
-				<p>&nbsp;&nbsp;</p>
-				
-				</div>
 				
 				
 				
 				
 				<div id="dondestamos">
-				<p>Rotulos Jose<br>
-				Poligono Puente Alto, s/n<br>
-				03433 Orihuela(Alicante)<br>
-				Telefono:9234523<br>
-				e-mail:info@rotulosjose.com</p>
+				
 				</div>
 				
 				
@@ -162,7 +143,7 @@ text-align:left;
 			
 			
 			<div id="footer">
-						
+					<img src="/imgJose/dooo.png">	
 			</div>
 
 </div><!-- page -->

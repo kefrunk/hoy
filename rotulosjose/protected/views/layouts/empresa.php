@@ -32,7 +32,7 @@ position:absolute;
  top:100px;
  left:120px;
  right:100px;
- bottom: 88px;
+ bottom: 28px;
  overflow:scroll;
 background: url('/imgJose/slogotr.png') right no-repeat #555555;
 padding-left:40px;
@@ -46,7 +46,7 @@ font-weight:bold;
  top:100px;
  left:0;
  width:30px;
- bottom:88px;
+ bottom:28px;
 background-color:#7c6a5b;
 }
 
@@ -57,7 +57,7 @@ background-color:#7c6a5b;
  bottom:0;
  right:0;
  left:0;
- height:88px;
+ height:28px;
  background-color: #100f99;
  background-image: url('/imgJose/grad.png');
 }
@@ -92,13 +92,16 @@ text-align:left;
 <body class="index">
 
 <div id="mainmenu">
-
+			<div id="Titulos">
+		<img src="/imgJose/logo1.png"style="float:left;margin-left:50px;"/>
+		</div>
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Inicio', 'url'=>array('/site/index')),
-					array('label'=>'Galeria', 'url'=>array('/site/galeria')),
-					array('label'=>'Empresa', 'url'=>array('/site/about')),
-					array('label'=>'Contacto', 'url'=>array('/site/contact')),
+					array('label'=>'Galeria', 'url'=>array('/site/galeria'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Empresa', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
+					array('label'=>'Imagenes', 'url'=>array('/imagen/admin'), 'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Contacto', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				),

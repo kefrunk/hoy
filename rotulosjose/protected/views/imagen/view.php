@@ -17,7 +17,7 @@ $this->menu=array(
 ?>
 
 <h1>View Imagen #<?php echo $model->id; ?></h1>
-
+<font color="black">
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -25,3 +25,4 @@ $this->menu=array(
 		'image',
 	),
 )); ?>
+</font>

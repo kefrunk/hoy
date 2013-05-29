@@ -12,14 +12,12 @@ $this->widget('Galleria', array(
     'dataProvider' => $model->search(),
 	'options' => array(//galleria options
         'transition' => 'fade',
-		'autoplay'=>5000,
 		'imageCrop'=>true,
 		'lightbox'=>true,
 		'transitionSpeed' => 2000,
 		 'imagePan'=>true,
-		 'showInfo' =>false,
-		 'showImagenav'=>false,
-		'imageMargin'=>0,),
+		 'showInfo' =>true,
+		 ),
 	'srcPrefix' => 'upload/images/',
     'binding' => array(
 	'imagePrefix' => '',

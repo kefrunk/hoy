@@ -15,13 +15,13 @@ $this->widget('Galleria', array(
     'dataProvider' => $model->search(),
 	'options' => array(//galleria options
         'transition' => 'fade',
-		'autoplay'=>5000,
+		'autoplay'=>6000,
 		'lightbox'=>true,
-		'transitionSpeed' => 2000,
-		 'imagePan'=>true,
+		'transitionSpeed' => 3000,
 		 'showInfo' =>false,
+		 'height'=>428,
 		 'showImagenav'=>false,
-		 'imageCrop'=>true,),
+		 'imageCrop'=>'portrait',),
 	'srcPrefix' => 'upload/images/',
     'binding' => array(
 	'imagePrefix' => '',
