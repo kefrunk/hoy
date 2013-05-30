@@ -12,7 +12,7 @@ $this->widget('Galleria', array(
     'dataProvider' => $model->search(),
 	'options' => array(//galleria options
         'transition' => 'fade',
-		'imageCrop'=>true,
+		'imageCrop'=>false,
 		'lightbox'=>true,
 		'transitionSpeed' => 2000,
 		 'imagePan'=>true,

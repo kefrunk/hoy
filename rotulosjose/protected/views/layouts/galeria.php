@@ -31,7 +31,7 @@ position:absolute;
 position:absolute;
  top:100px;
   overflow:scroll;
- left:120px;
+ left:220px;
  right:100px;
  bottom: 0px;
 background: url('/imgJose/slogotr.png') right no-repeat #555555;
@@ -41,7 +41,7 @@ color:#FFFFFF;
 
 #leftPanel{
  position:absolute;
- top:100px;
+ top:20%;
  left:0;
  width:30px;
  bottom:88px;
@@ -90,9 +90,7 @@ text-align:left;
 <body class="index">
 
 <div id="mainmenu">
-		<div id="Titulos">
 		<img src="/imgJose/logo1.png"style="float:left;margin-left:50px;"/>
-		</div>
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Inicio', 'url'=>array('/site/index')),
@@ -100,7 +98,7 @@ text-align:left;
 					array('label'=>'Empresa', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Imagenes', 'url'=>array('/imagen/admin'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Contacto', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Textos', 'url'=>array('/texto/admin'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				),
 			)); ?>
@@ -118,8 +116,20 @@ text-align:left;
 		<?php echo $content; ?>
 	</div>
 
-<div id="cabeceraPanel"></div>
-		
+	
+	<div id="leftPanel">
+		<div id="leftPanelWidget1">		
+				<ul>			
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hotelesAlicante">Vehiculos</a></li>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hotelesBenidorm">Fachadas</a>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hoteleselche">Luminosos</a>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hoteleselche">Lonas plásticas</a>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hoteleselche">Cartelería</a>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hoteleselche">Vallas publicitarias</a>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hotelesvegabaja">Corporeos</a>
+						<li><a class="enlacetipo1" href="/yii/guiapaq/?r=guia/hotelesElda">Impresión Digital</a>
+				</ul>
+				</div>	
 			
 			
 			

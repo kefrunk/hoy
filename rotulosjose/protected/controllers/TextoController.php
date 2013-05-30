@@ -1,6 +1,6 @@
 <?php
 
-class ImagenController extends Controller
+class TextoController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,23 +62,23 @@ class ImagenController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Imagen;
+		$model=new Texto;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Imagen']))
-		{
-			$paa=$_POST['Imagen'];
-			$model->image=CUploadedFile::getInstance($model,'image');
-			$model->description=$paa["description"];
-			
+		if(isset($_POST['Texto']))
+		{	
+			$paa=$_POST['Texto'];
+			$model->nombre=$paa["nombre"];
+			$model->valor=$paa["valor"];
 			if($model->save())
-				$model->image->saveAs('upload/images/'.$model->image);
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		 $this->render('create', array('model'=>$model));
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -93,11 +93,12 @@ class ImagenController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Imagen']))
+		if(isset($_POST['Texto']))
 		{
-			$paa=$_POST['Imagen'];
-			$model->image=CUploadedFile::getInstance($model,'image');
-			$model->description=$paa["description"];
+			$model->attributes=$_POST['Texto'];
+			$paa=$_POST['Texto'];
+			$model->nombre=$paa["nombre"];
+			$model->valor=$paa["valor"];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -114,61 +115,19 @@ class ImagenController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$model=$this->loadModel($id);
-		$model->delete();
-		unlink('upload/images/'.$model->image);
-		$this->redirect(array('index'));
-		
+		$this->loadModel($id)->delete();
+
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	   
-                        
-                        
-                        
-                     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Imagen');
+		$dataProvider=new CActiveDataProvider('Texto');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -179,10 +138,10 @@ class ImagenController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Imagen('search');
+		$model=new Texto('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Imagen']))
-			$model->attributes=$_GET['Imagen'];
+		if(isset($_GET['Texto']))
+			$model->attributes=$_GET['Texto'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -193,12 +152,12 @@ class ImagenController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Imagen the loaded model
+	 * @return Texto the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Imagen::model()->findByPk($id);
+		$model=Texto::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -206,11 +165,11 @@ class ImagenController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Imagen $model the model to be validated
+	 * @param Texto $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='imagen-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='texto-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

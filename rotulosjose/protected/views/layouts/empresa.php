@@ -92,17 +92,15 @@ text-align:left;
 <body class="index">
 
 <div id="mainmenu">
-			<div id="Titulos">
-		<img src="/imgJose/logo1.png"style="float:left;margin-left:50px;"/>
-		</div>
+			<img src="/imgJose/logo1.png"style="float:left;margin-left:50px;"/>
 			<?php $this->widget('zii.widgets.CMenu',array(
 				'items'=>array(
 					array('label'=>'Inicio', 'url'=>array('/site/index')),
 					array('label'=>'Galeria', 'url'=>array('/site/galeria'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Empresa', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest),
 					array('label'=>'Imagenes', 'url'=>array('/imagen/admin'), 'visible'=>!Yii::app()->user->isGuest),
+					array('label'=>'Textos', 'url'=>array('/texto/admin'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Contacto', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest),
-					array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				),
 			)); ?>

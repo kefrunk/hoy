@@ -39,11 +39,11 @@ body
  position:absolute;
  left:0;
  top:0px;
- bottom:50%;
- width:228px;
- margin:25px;
- background: rgba(120,0,45,0.7);
-  border-style: solid;
+ width:208px;
+ margin:5px;
+ padding-top:25px;
+ padding-bottom:35px;
+ border-style: solid;
  border-width: 2px;
  -moz-border-radius: 15px;
  border-radius: 15px;
@@ -51,10 +51,32 @@ body
  background-image: url('/imgJose/borderdiscover.png');
 }
 
+#leftPanelWidget1 ul li a{
 
+	text-decoration:none;
+	color:#ffffff;
+	background-color:transparent;
+	font-size:17px;
+	font-weight:bold;
+	width: 70px;
+	color: #1155cc;
+	margin: 0 1px 0 0;
+	text-align: left;
+	
+	
+	
+	}
 
+#leftPanelWidget1 ul li{
 
+	text-decoration:none;
+	margin-bottom:8px;
+	}
+#leftPanelWidget1 ul {
 
+	text-decoration:none;
+	list-style:none;
+	}
 
 
 #mainmenu
@@ -85,8 +107,12 @@ background: url('/imgJose/antigrad.png') repeat-x #333333;
 	width: 70px;
 	background-color:rgba(255,175,125,0.80);
 	color: #FFF;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	margin: 0 1px 0 0;
 	text-align: center;
-	
 }
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
@@ -95,32 +121,7 @@ background: url('/imgJose/antigrad.png') repeat-x #333333;
 }
 
 
-#sddm li
-{	margin: 0 1px 0 0;
-	padding: 7px 10px;
-	list-style: none;
-	float: left;
-	width: 70px;
-	-moz-border-radius: 15px;
-border-radius: 15px;
-	font: 20px arial;
-	color: #FFF;
-	
-	text-align: center;}
-
-#sddm li a
-{	display: block;
-	margin: 0 1px 0 0;
-	
-	padding: 7px 10px;
-	width: 70px;
-	background-color:rgba(255,175,125,0.80);
-	color: #FFF;
-	text-align: center;
-	text-decoration: none}
-
-
-#sddm div
+#mainmenu div
 {	position: absolute;
 	visibility: hidden;
 	margin: 0;
@@ -128,7 +129,7 @@ border-radius: 15px;
 	background: #EAEBD8;
 	border: 1px solid #5970B2}
 
-	#sddm div a
+	#mainmenu div a
 	{	position: relative;
 		display: block;
 		margin: 0;
@@ -141,7 +142,7 @@ border-radius: 15px;
 		color: #2875DE;
 		font: 11px arial}
 
-	#sddm div a:hover
+	#mainmenu div a:hover
 	{	background: #49A3FF;
 		color: #FFF}
 
