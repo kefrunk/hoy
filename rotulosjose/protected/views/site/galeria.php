@@ -18,7 +18,7 @@ $this->widget('Galleria', array(
 		 'imagePan'=>true,
 		 'showInfo' =>true,
 		 ),
-	'srcPrefix' => 'upload/images/',
+	'srcPrefix' =>  Yii::app()->request->baseUrl.'/upload/images/',
     'binding' => array(
 	'imagePrefix' => '',
         'image' => 'image',

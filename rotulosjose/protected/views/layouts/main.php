@@ -27,6 +27,14 @@ position:absolute;
  background-image: url('/imgJose/antigrad.png');
 }
 
+#garagenavagacion{
+position:absolute;
+ top:20px;
+ right:40px;
+}
+
+
+
 #cuerpoPanel{
 position:absolute;
  top:100px;
@@ -83,6 +91,13 @@ text-align:left;
 </style>
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+	
+<link href='<?php echo Yii::app()->request->baseUrl; ?>/css/style.css' rel='stylesheet' type='text/css' />
+		<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+		
+		<link href='<?php echo Yii::app()->request->baseUrl; ?>/css/garagedoor.css' rel='stylesheet' type='text/css' />
+		<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/garagedoorjQuery.js" type="text/javascript"></script>
 </head>
 
 <body class="index">
@@ -102,7 +117,47 @@ text-align:left;
 			)); ?>
 			
 		
-	</div><!-- header -->
+	</div>
+	<div id="garagenavagacion">
+	<div class='garagedoor' id='garagedoor'>		
+					<div title='http://www.rotulosjose.com/site/index' class='item'>
+						<div class='underlay'>
+							Inicio
+						</div>
+						<img src='/imgJose/garage5.jpg' alt='' class='overlay' />
+						<div class='mouse'><img src='<?php echo Yii::app()->request->baseUrl; ?>/images/nothing.gif' alt='' /> &nbsp;</div>
+					</div>
+					<div title='http://www.rotulosjose.com/site/galeria' class='item'>
+						<div class='underlay'>
+							Galeria
+						</div>
+						<img src='/imgJose/garage2.jpg' class='overlay' alt='' />
+						<div class='mouse'><img src='<?php echo Yii::app()->request->baseUrl; ?>/images/nothing.gif' alt='' /> &nbsp;</div>
+					</div>
+					<div title='http://www.rotulosjose.com/site/about' class='item'>
+						<div class='underlay'>
+							Empresa
+						</div>
+						<img src='/imgJose/garage3.jpg' class='overlay' alt='' />
+						<div class='mouse'><img src='<?php echo Yii::app()->request->baseUrl; ?>/images/nothing.gif' alt='' /> &nbsp;</div>
+					</div>
+					<div title='http://www.rotulosjose.com/site/contact' class='item'>
+						<div class='underlay'>
+							Contacto
+						</div>
+						<img src='/imgJose/garage4.jpg' class='overlay' alt='' />
+						<div class='mouse'><img src='<?php echo Yii::app()->request->baseUrl; ?>/images/nothing.gif' alt='' /> &nbsp;</div>
+					</div>
+					
+					<script type='text/javascript'>
+						GarageDoor.scrollY = -55;
+						GarageDoor.setBindings('garagedoor');
+					</script>
+		</div>
+</div>		
+	
+	
+	<!-- header -->
 
 	
 	

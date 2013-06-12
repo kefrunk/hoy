@@ -22,7 +22,7 @@ $this->widget('Galleria', array(
 		 'height'=>428,
 		 'showImagenav'=>false,
 		 'imageCrop'=>'portrait',),
-	'srcPrefix' => 'upload/images/',
+	'srcPrefix' =>  Yii::app()->request->baseUrl.'/upload/images/',
     'binding' => array(
 	'imagePrefix' => '',
         'image' => 'image',
